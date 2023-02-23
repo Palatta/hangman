@@ -92,7 +92,12 @@ while lives > 0:
 
     print("")
     print("")
-    guess = str(input("Enter a letter: "))
+    while True:
+        guess = str(input("Enter a letter: "))
+        if len(guess) > 1:
+            print("Enter only one word!")
+        else:
+            break
     print("")
     guessed_letters += guess
  
@@ -100,3 +105,4 @@ while lives > 0:
         lives -= 1
     if lives == 0:
         print("YOU LOSE!")
+        print("The word was: " + random_word)
